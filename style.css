@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    margin: 20px;
+    font-size: 2.5rem;
+  }
+  
+  #board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 404px;
+    height: 404px;
+    background-color: #c2c2c2;
+    border: 2px solid #7a7a7a;
+    padding: 2px;
+  }
+  
+  button {
+    width: 36px;
+    height: 36px;
+    margin: 2px;
+    font-size: 1.5rem;
+    background-color: #d9d9d9;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    line-height: 1.2;
+    box-sizing: border-box;
+   }
+  
+  button:hover {
+   background-color: #bfbfbf;
+  }
+  
+  button:active {
+    background-color: #a6a6a6;
+  }
+  
+  button.revealed {
+    background-color: #f2f2f2;
+  }
+  
+  button.mine {
+    background-color: red;
+  }
+  
+  button.flagged {
+    background-image: url(https://e7.pngegg.com/pngimages/986/74/png-clipart-red-flag-red-flag-red-flag-miscellaneous-angle-thumbnail.png);
+    background-size: cover;
+  }
+  button#reset {
+  background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 60%;
+    transition: all 0.2s ease;
+    text-shadow: 1px 1px 1px #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  button#reset:hover {
+    background-color: #555;
+  }
