@@ -1,7 +1,8 @@
-const BOARD_SIZE = 10;
-const NUM_MINES = 3;
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('dblclick', event => event.preventDefault());
+
+const BOARD_SIZE = 10;
+const NUM_MINES = 15;
 var board = [];
 var gameOver = false;
 var flagsRemaining = NUM_MINES;
@@ -101,6 +102,7 @@ function handleButtonClick(event) {
 }
 
 function handleButtonRightClick(event) {
+
     if (gameOver) {
         return;
     }
@@ -111,14 +113,15 @@ function handleButtonRightClick(event) {
     var cell = board[row][col];
 
     if (!cell.revealed) {
-        cell.flagged = !cell.flagged;
-        if (cell.flagged && flagsRemaining > 0) {
-
+        if (!cell.flagged && flagsRemaining > 0) {
             flagsRemaining--;
             event.target.classList.add("flagged");
-        } else if (!cell.flagged && flagsRemaining < 3) {
+            cell.flagged = true;
+
+        } else if (cell.flagged) {
             flagsRemaining++;
             event.target.classList.remove("flagged");
+            cell.flagged = false;
         }
         renderFlagsRemaining();
     }
